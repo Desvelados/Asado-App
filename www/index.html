@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+		<link rel="stylesheet" href="style/jquery.mobile-1.4.3.css">
+		<link rel="stylesheet" href="style/sheet.css">
+        <title>Asado app</title>
+    </head>
+    <body>
+		<div data-role="page" id="comensales">    
+			<div data-role="header" style="padding: 0 !important;" data-position="fixed">
+				<header class="header">
+					<div class="logCont">
+						Comensales
+					</div>
+				</header>
+			</div>
+            <div class="contenedor">
+                <div class="contenido">
+                    <p>Hombres:</p><select id="hombre"></select>
+                    <p>Mujeres:</p><select id="mujer"></select>								
+                    <p>Niños:</p><select id="ninio"></select>
+                    <br>
+					<button onClick="app.selComensales();">Aceptar</button>
+                </div>
+            </div>
+		</div>
+		<div data-role="page" id="almacen">    
+			<div data-role="header" style="padding: 0 !important;" data-position="fixed">
+				<header class="header">
+					<div class="logCont">
+						Almacen
+					</div>
+				</header>
+			</div>
+            <div class="contenedor">
+                <div class="contenido">
+                    <form>
+                        <fieldset id="lista" data-role="controlgroup" data-iconpos="right">
+                            <input type="checkbox" name="chorizo" id="chori" />
+                            <label id="choriLbl" for="chori">Chorizo jugoso</label>
+                            <input type="checkbox" name="morcilla" id="morci" />
+                            <label id="morciLbl" for="morci">Morcilla senzual</label>
+                        </fieldset>
+                    </form>
+					<button onClick="app.calculo();">Calcular</button>
+                </div>
+            </div>
+		</div>
+		<div data-role="page" id="calculo">
+            <div data-role="header" style="padding: 0 !important;" data-position="fixed">
+				<header class="header">
+					<div class="logCont">
+						Calculo
+					</div>
+				</header>
+			</div>
+            <div class="contenedor">
+                <div class="contenido">
+                    <ul  id="lista">
+                        <li>
+                            <label>Producto</label>
+                            <label>$99.99</label>
+                        </li>
+                    </ul>
+					<button onClick="">Aceptar/Guardar?</button>
+                </div>
+            </div>
+		</div>
+		<div data-role= "page" id="detalleForm">    
+			<div data-role="header" style="padding: 0 !important;" data-position="fixed">
+				<header class="header">
+					<div class="slider">
+						<img id="menu2" src="style/images/menu.png"/>
+						<a href="#" class="menuItem" onclick="app.salir();">Salir</a>
+					</div>
+					<div class="logCont">
+						Daniel Scioli
+						<br>
+						<label style="font-size: 0.7em;">2015</label>
+					</div>
+				</header>
+				<div class="subHeadDiv">
+                    <img src="style/images/atras.png" style="width:30px;   margin-top: 10px;" onclick="app.back2Form();"/>
+				</div>
+			</div>
+            <div class="contenedor">
+                <h3>Detalle del formulario</h3> 
+                <div class="contenido contenidoTabla">
+					<section>
+						<ul id="listado" class="listado">
+                            
+						</ul>
+					</section>
+				</div>	
+            </div>
+            <div id="popup">
+                <img style="width: 130px; margin-top: 35px; margin-left: 20px;" src="style/images/trash2.png" onclick="borradoDefinitivo();"/>
+                <img style="width: 130px; margin-top: 35px;" src="style/images/cancel.png" onclick="hidePrompt();"/>
+            </div>
+		</div>
+        <div data-role= "page" id="bajaForm">
+			<div data-role="header" style="padding: 0 !important;" data-position="fixed">
+				<header class="header">
+					<div class="slider">
+						<img id="menu2" src="style/images/menu.png"/>
+						<a href="#" class="menuItem" onclick="app.salir();">Salir</a>
+					</div>
+					<div class="logCont">
+						Daniel Scioli
+						<br>
+						<label style="font-size: 0.7em;">2015</label>
+					</div>
+				</header>
+			</div>
+            <div class="contenedor">
+                <h3>Cierre de Formulario</h3>
+                <br>
+                <h4>Ha alcanzado el limite de lineas, por favor tome una fotografia del formulario y de de alta uno nuevo</h4>
+				<img data-role="none" id="fotoForm" src="style/images/photo.png" class="fotoForm" onclick="app.tomarF3();"/>
+                <button id="fnFrm" disabled=true style="margin-bottom: 0px !important;" onclick="app.finForm();">Finalizar</button>
+            </div>
+		</div>		
+		<div data-role= "page" id="notDiv"></div>
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="js/jquery.mobile-1.4.3.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/BBDD.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
