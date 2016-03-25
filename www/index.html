@@ -27,6 +27,8 @@
                     <p>Niños:</p><select id="ninio"></select>
                     <br>
 					<button onClick="app.selComensales();">Aceptar</button>
+					<button onClick="app.carlos();">initProd</button>
+					<button onClick="location.href = '#abmProd';">editProd</button>
                 </div>
             </div>
 		</div>
@@ -42,10 +44,10 @@
                 <div class="contenido">
                     <form>
                         <fieldset id="lista" data-role="controlgroup" data-iconpos="right">
-                            <input type="checkbox" name="chorizo" id="chori" />
+                            <!--<input type="checkbox" name="chorizo" id="chori" />
                             <label id="choriLbl" for="chori">Chorizo jugoso</label>
                             <input type="checkbox" name="morcilla" id="morci" />
-                            <label id="morciLbl" for="morci">Morcilla senzual</label>
+                            <label id="morciLbl" for="morci">Morcilla senzual</label>-->
                         </fieldset>
                     </form>
 					<button onClick="app.calculo();">Calcular</button>
@@ -54,6 +56,7 @@
 		</div>
 		<div data-role="page" id="calculo">
             <div data-role="header" style="padding: 0 !important;" data-position="fixed">
+                <a href="#almacen" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-back">Atras</a>
 				<header class="header">
 					<div class="logCont">
 						Calculo
@@ -62,16 +65,37 @@
 			</div>
             <div class="contenedor">
                 <div class="contenido">
-                    <ul  id="lista">
-                        <li>
-                            <label>Producto</label>
-                            <label>$99.99</label>
-                        </li>
+                    <ul id="listaCalculo">
+                        
                     </ul>
 					<button onClick="">Aceptar/Guardar?</button>
                 </div>
             </div>
+		</div>        
+		<div data-role="page" id="abmProd">    
+			<div data-role="header" style="padding: 0 !important;" data-position="fixed">
+				<header class="header">
+					<div class="logCont">
+						Productos
+					</div>
+				</header>
+			</div>
+            <div class="contenedor">
+                <div class="contenido">
+                    <ul id="prodListado">
+                        <li>
+                            <label>Pollo</label>
+                            <label></label>
+                            <div>
+                                <img/>
+                                <img/>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 		</div>
+        <!--
 		<div data-role= "page" id="detalleForm">    
 			<div data-role="header" style="padding: 0 !important;" data-position="fixed">
 				<header class="header">
@@ -125,7 +149,8 @@
 				<img data-role="none" id="fotoForm" src="style/images/photo.png" class="fotoForm" onclick="app.tomarF3();"/>
                 <button id="fnFrm" disabled=true style="margin-bottom: 0px !important;" onclick="app.finForm();">Finalizar</button>
             </div>
-		</div>		
+		</div>	
+        -->	
 		<div data-role= "page" id="notDiv"></div>
 		<script src="js/jquery-1.10.2.js"></script>
 		<script src="js/jquery.mobile-1.4.3.js"></script>

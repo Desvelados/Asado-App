@@ -40,6 +40,14 @@ body{font-size:16px;line-n: 20px;color:#807f83;font-family:LatoReg;}
 	display: block;
 	/*box-shadow: 0px 4px 5px -3px #888;*/
 }
+.listNoList{
+    list-style-type: none;
+}
+.totalSubItem{
+    width: 49% !important;
+    display: inline-block !important;
+    text-align: center !important;
+}
 /*
 .SubHeader{
 	text-align: center; 
